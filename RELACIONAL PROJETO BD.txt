@@ -1,0 +1,58 @@
+Modelo Relacional
+
+1. Tabela: CLIENTE
+
+. cliente_id — Identificador único do cliente.
+. nome — Nome do cliente.
+. dataNasc — Data de nascimento do cliente.
+. rua — Rua do endereço do cliente.
+. complemento — Complemento do endereço.
+
+2. Tabela: TELEFONE
+
+. cliente_id (FK) — Chave estrangeira que referencia o CLIENTE.
+. numero — Número de telefone do cliente.
+
+3. Tabela: FORNECEDOR
+
+. id_fornecedor (PK) — Identificador único do fornecedor.
+. nome_empresa — Nome da empresa fornecedora.
+. endereco — Endereço do fornecedor.
+. telefone — Telefone do fornecedor.
+. email — Email do fornecedor.
+
+4. Tabela: FUNCIONARIO
+
+. id_funcionario (PK) — Identificador único do funcionário.
+. nome — Nome do funcionário.
+. endereco — Endereço do funcionário.
+. telefone — Telefone do funcionário.
+. cargo — Cargo do funcionário.
+. salario — Salário do funcionário.
+. data_admissao — Data de admissão do funcionário.
+
+5. Tabela: PRODUTO
+
+. id_produto (PK) — Identificador único do produto.
+. nome — Nome do produto.
+. descricao — Descrição do produto.
+. preco_unitario — Preço unitário do produto.
+. quantidade_estoque — Quantidade disponível no estoque.
+. id_fornecedor (FK) — Chave estrangeira que referencia o FORNECEDOR.
+
+6. Tabela: PEDIDO
+
+. pedido_id (PK) — Identificador único do pedido.
+. cliente_id — Chave estrangeira que referencia o CLIENTE.
+. id_funcionario (FK) — Chave estrangeira que referencia o FUNCIONARIO.
+. data_pedido — Data do pedido.
+. tipo_pedido — Tipo de pedido (Presencial, Retirada ou Delivery).
+
+7. Tabela: ITEM_PEDIDO
+
+. item_id (PK) — Identificador único do item no pedido.
+. pedido_id (FK) — Chave estrangeira que referencia o PEDIDO.
+. produto_id (FK) — Chave estrangeira que referencia o PRODUTO.
+. preco — Preço do produto no momento da compra.
+. quantidade — Quantidade do produto no pedido.
+. desconto — Desconto aplicado ao item (pode ser nulo).
